@@ -11,3 +11,5 @@ routerRooms.post('/newRoom');
 routerRooms.put('/editRoom/:roomId');
 
 routerRooms.delete('/:roomId');
+
+export default routerRooms

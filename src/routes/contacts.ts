@@ -11,3 +11,5 @@ routerContacts.post('/newContact');
 routerContacts.put('/editContact/:contactId');
 
 routerContacts.delete('/:contactId');
+
+export default routerContacts

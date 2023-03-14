@@ -11,3 +11,5 @@ routerUsers.post('/newUser');
 routerUsers.put('/editUser/:userId');
 
 routerUsers.delete('/:userId');
+
+export default routerUsers

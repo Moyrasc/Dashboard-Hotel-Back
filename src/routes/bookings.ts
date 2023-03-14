@@ -11,3 +11,5 @@ routerBookings.post('/newBooking');
 routerBookings.put('/editBooking/:bookingId');
 
 routerBookings.delete('/:bookingId');
+
+export default routerBookings
