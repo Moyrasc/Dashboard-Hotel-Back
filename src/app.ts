@@ -22,7 +22,7 @@ app.use('/bookings',passport.authenticate('jwt', { session: false }),routerBooki
 app.use('/rooms',passport.authenticate('jwt', { session: false }),routerRooms)
 app.use('/contacts',passport.authenticate('jwt', { session: false }),routerContacts)
 app.use('/users',passport.authenticate('jwt', { session: false }),routerUsers)
-app.use('/login',passport.authenticate('jwt', { session: false }),routerLogin)
+app.use('/login',routerLogin)
 
 
 // errors 404

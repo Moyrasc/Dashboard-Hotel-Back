@@ -21,9 +21,7 @@ passport.use(
         if (HARDUSER.email !== email || HARDUSER.password !== password) {
           return done(null, false, { message: 'User not found or wrong password' });
         }
-
         return done(null, HARDUSER, { message: 'Logged in Successfully' });
-
       } catch (error) {
         return done(error)
       }
