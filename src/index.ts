@@ -1,5 +1,5 @@
-import app from './server'
+import app from './app'
 
-app.listen('4000',()=>{
+app.listen('4000',() =>{
   console.log('Server running on 4000')
 })
