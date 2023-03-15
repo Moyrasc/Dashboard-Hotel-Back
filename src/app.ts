@@ -21,7 +21,7 @@ passport.use(isAuth)
 app.use('/bookings',routerBookings)
 app.use('/rooms',routerRooms)
 app.use('/contacts',passport.authenticate('jwt', { session: false }),routerContacts)
-app.use('/users',passport.authenticate('jwt', { session: false }),routerUsers)
+app.use('/users',routerUsers)
 app.use('/login',routerLogin)
 
 
