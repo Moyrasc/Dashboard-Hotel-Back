@@ -20,7 +20,7 @@ passport.use(isAuth)
 
 app.use('/bookings',routerBookings)
 app.use('/rooms',routerRooms)
-app.use('/contacts',passport.authenticate('jwt', { session: false }),routerContacts)
+app.use('/contacts',routerContacts)
 app.use('/users',routerUsers)
 app.use('/login',routerLogin)
 
