@@ -1,13 +1,13 @@
-export interface Room {
+export interface RoomInter {
     id: number,
     name: string;
     typeRoom: string;
     description: string;
-    photo: {};
-    roomNumber: number;
-    offer: number;
+    photo: string[];
+    number: number;
+    offers: number;
     price: number;
-    discount?: number;
+    discount: number;
     cancellation: string;
     amenities: string;
     status: string;

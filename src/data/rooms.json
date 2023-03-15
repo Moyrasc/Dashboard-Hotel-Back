@@ -13,7 +13,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 1,
-        "offers": true,
+        "offers": 10,
         "price": 500,
         "discount": 60,
         "cancellation": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
@@ -37,7 +37,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 2,
-        "offers": true,
+        "offers": 10,
         "price": 683,
         "discount": 60,
         "cancellation": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
@@ -61,7 +61,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 3,
-        "offers": false,
+        "offers": 15,
         "price": 761,
         "discount": 40,
         "cancellation": "In congue. Etiam justo. Etiam pretium iaculis justo.",
@@ -85,7 +85,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 4,
-        "offers": true,
+        "offers": 10,
         "price": 689,
         "discount": 56,
         "cancellation": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
@@ -109,7 +109,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 5,
-        "offers": true,
+        "offers": 10,
         "price": 282,
         "discount": 20,
         "cancellation": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
@@ -133,7 +133,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 6,
-        "offers": false,
+        "offers": 15,
         "price": 346,
         "discount": 35,
         "cancellation": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -157,7 +157,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 7,
-        "offers": true,
+        "offers": 10,
         "price": 665,
         "discount": 40,
         "cancellation": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
@@ -181,7 +181,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 8,
-        "offers": true,
+        "offers": 10,
         "price": 750,
         "discount": 30,
         "cancellation": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
@@ -205,7 +205,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 9,
-        "offers": true,
+        "offers": 10,
         "price": 582,
         "discount": 50,
         "cancellation": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
@@ -229,7 +229,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 10,
-        "offers": true,
+        "offers": 10,
         "price": 271,
         "discount": 20,
         "cancellation": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
@@ -253,7 +253,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 11,
-        "offers": false,
+        "offers": 15,
         "price": 761,
         "discount": 40,
         "cancellation": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
@@ -277,7 +277,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 12,
-        "offers": true,
+        "offers": 10,
         "price": 798,
         "discount": 30,
         "cancellation": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -301,7 +301,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 13,
-        "offers": true,
+        "offers": 10,
         "price": 683,
         "discount": 50,
         "cancellation": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
@@ -325,7 +325,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 14,
-        "offers": true,
+        "offers": 10,
         "price": 960,
         "discount": 60,
         "cancellation": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
@@ -349,7 +349,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 15,
-        "offers": false,
+        "offers": 15,
         "price": 523,
         "discount": 45,
         "cancellation": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
@@ -373,7 +373,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 16,
-        "offers": false,
+        "offers": 15,
         "price": 589,
         "discount": 40,
         "cancellation": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
@@ -397,7 +397,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 17,
-        "offers": true,
+        "offers": 10,
         "price": 862,
         "discount": 60,
         "cancellation": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
@@ -421,7 +421,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 18,
-        "offers": true,
+        "offers": 10,
         "price": 621,
         "discount": 30,
         "cancellation": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
@@ -445,7 +445,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 19,
-        "offers": false,
+        "offers": 15,
         "price": 753,
         "discount": 50,
         "cancellation": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
@@ -469,7 +469,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 20,
-        "offers": true,
+        "offers": 10,
         "price": 418,
         "discount": 20,
         "cancellation": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
@@ -493,7 +493,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 21,
-        "offers": true,
+        "offers": 10,
         "price": 284,
         "discount": 20,
         "cancellation": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
@@ -517,7 +517,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 22,
-        "offers": false,
+        "offers": 15,
         "price": 446,
         "discount": 40,
         "cancellation": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
@@ -542,7 +542,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 23,
-        "offers": false,
+        "offers": 15,
         "price": 998,
         "discount": 50,
         "cancellation": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
@@ -566,7 +566,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 24,
-        "offers": true,
+        "offers": 10,
         "price": 709,
         "discount": 60,
         "cancellation": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
@@ -590,7 +590,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 25,
-        "offers": false,
+        "offers": 15,
         "price": 994,
         "discount": 60,
         "cancellation": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
@@ -614,7 +614,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 26,
-        "offers": true,
+        "offers": 10,
         "price": 719,
         "discount": 40,
         "cancellation": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
@@ -638,7 +638,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 27,
-        "offers": false,
+        "offers": 15,
         "price": 432,
         "discount": 30,
         "cancellation": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
@@ -662,7 +662,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 28,
-        "offers": true,
+        "offers": 10,
         "price": 186,
         "discount": 10,
         "cancellation": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
@@ -686,7 +686,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 29,
-        "offers": false,
+        "offers": 15,
         "price": 887,
         "discount": 60,
         "cancellation": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
@@ -710,7 +710,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 30,
-        "offers": false,
+        "offers": 15,
         "price": 962,
         "discount": 60,
         "cancellation": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
@@ -734,7 +734,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 31,
-        "offers": false,
+        "offers": 15,
         "price": 940,
         "discount": 60,
         "cancellation": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
@@ -758,7 +758,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 32,
-        "offers": false,
+        "offers": 15,
         "price": 472,
         "discount": 25,
         "cancellation": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
@@ -782,7 +782,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 33,
-        "offers": false,
+        "offers": 15,
         "price": 216,
         "discount": 25,
         "cancellation": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
@@ -806,7 +806,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 34,
-        "offers": false,
+        "offers": 15,
         "price": 130,
         "discount": 10,
         "cancellation": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
@@ -830,7 +830,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 35,
-        "offers": false,
+        "offers": 15,
         "price": 700,
         "discount": 60,
         "cancellation": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
@@ -854,7 +854,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 36,
-        "offers": false,
+        "offers": 15,
         "price": 428,
         "discount": 10,
         "cancellation": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
@@ -878,7 +878,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 37,
-        "offers": false,
+        "offers": 15,
         "price": 195,
         "discount": 10,
         "cancellation": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
@@ -902,7 +902,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 38,
-        "offers": true,
+        "offers": 10,
         "price": 556,
         "discount": 20,
         "cancellation": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
@@ -927,7 +927,7 @@
             
         ],
         "number": 39,
-        "offers": true,
+        "offers": 10,
         "price": 678,
         "discount": 50,
         "cancellation": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
@@ -951,7 +951,7 @@
             "https://cf.bstatic.com/xdata/images/hotel/max1024x768/229283897.jpg?k=4539b8c016bdf8a3d14b6563843233c7742011430944e6d255d5d8587d232c44&o="
         ],
         "number": 40,
-        "offers": false,
+        "offers": 15,
         "price": 714,
         "discount": 60,
         "cancellation": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
