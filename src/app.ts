@@ -8,6 +8,7 @@ import routerRooms from "./routes/rooms";
 import routerContacts from "./routes/contacts";
 import routerUsers from "./routes/users";
 import routerLogin from "./routes/login";
+require('./auth/auth')
 
 const app = express()
 
@@ -18,10 +19,11 @@ app.use(express.json())
 app.use(passport.initialize())
 passport.use(isAuth)
 
-app.use('/bookings',routerBookings)
-app.use('/rooms',routerRooms)
-app.use('/contacts',routerContacts)
-app.use('/users',routerUsers)
+app.use('/bookings',passport.authenticate('jwt', { session: false }),routerBookings)
+app.use('/rooms',passport.authenticate('jwt', { session: false }),routerRooms)
+app.use('/contacts',passport.authenticate('jwt', { session: false }),routerContacts)
+app.use('/users',passport.authenticate('jwt', { session: false }),routerUsers)
+
 app.use('/login',routerLogin)
 
 
