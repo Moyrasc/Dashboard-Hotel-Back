@@ -19,13 +19,17 @@ app.use(express.json())
 app.use(passport.initialize())
 passport.use(isAuth)
 
-app.use('/bookings',passport.authenticate('jwt', { session: false }),routerBookings)
-app.use('/rooms',passport.authenticate('jwt', { session: false }),routerRooms)
-app.use('/contacts',passport.authenticate('jwt', { session: false }),routerContacts)
-app.use('/users',passport.authenticate('jwt', { session: false }),routerUsers)
 
 app.use('/login',routerLogin)
+app.use('/bookings',routerBookings)
+app.use('/rooms',routerRooms)
+app.use('/contacts',routerContacts)
+app.use('/users',routerUsers)
 
+app.use(express.static('public'))
+app.get('/private', passport.authenticate('jwt', { session: false }), (_req, res) => {
+  res.send({ message: 'ok' })
+})
 
 // errors 404
 app.use((_req, res) => {

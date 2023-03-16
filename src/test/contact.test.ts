@@ -2,10 +2,35 @@ import request, { Response } from 'supertest'
 import app from "../app"
 import { ContactInter } from '../types/contacts/ContactInter'
 
+interface AuthInter {
+  token: string
+}
+
+let auth: AuthInter = { token: ''}
+function loginUser(auth: AuthInter): any {
+  return function (done: Function): any {
+    request(app)
+      .post('/login')
+      .send({
+        email: 'admin@admin.com',
+        password: '1234'
+      })
+      .expect(200)
+      .end(onResponse);
+
+    function onResponse(err: Error, res: Response) {
+      auth.token = res.body.token;
+      return done();
+    }
+  };
+}
+
 describe('Contacts endpoint', () => {
+  beforeAll(loginUser(auth));
   it('GET all contacts', async (): Promise<void> => {
     const res: Response = await request(app)
       .get('/contacts')
+      .set('Authorization', 'bearer ' + auth.token)
       .expect(200)
       .expect('Content-Type', /json/)
 
@@ -14,6 +39,7 @@ describe('Contacts endpoint', () => {
   it('GET one contact', async (): Promise<void> => {
     const res: Response = await request(app)
       .get('/contacts/1')
+      .set('Authorization', 'bearer ' + auth.token)
       .expect(200)
       .expect('Content-Type', /json/)
 
@@ -33,6 +59,7 @@ describe('Contacts endpoint', () => {
     }
     const res: Response = await request(app)
       .post('/contacts/newContact')
+      .set('Authorization', 'bearer ' + auth.token)
       .send(obj)
       .expect(200)
     expect(res.body).toEqual(obj)
@@ -52,6 +79,7 @@ describe('Contacts endpoint', () => {
     
     const res: Response = await request(app)
       .put('/contacts/editContact/1')
+      .set('Authorization', 'bearer ' + auth.token)
       .send(obj)
       .expect(200)
     expect(res.body).toEqual(obj)
@@ -59,6 +87,7 @@ describe('Contacts endpoint', () => {
   it('DELETE one contact', async (): Promise<void> => {
     const res: Response = await request(app)
       .delete('/contacts/2')
+      .set('Authorization', 'bearer ' + auth.token)
       .expect(200)
       .expect('Content-Type', /json/)
 

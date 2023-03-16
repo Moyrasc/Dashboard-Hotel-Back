@@ -2,7 +2,9 @@ import request, { Response } from 'supertest'
 import app from "../app"
 import { BookingInter } from '../types/bookings/BookingInter'
 
+
 describe('Bookings endpoint', () => {
+
   it('GET all bookings', async (): Promise<void> => {
     const res: Response = await request(app)
       .get('/bookings')
