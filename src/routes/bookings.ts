@@ -13,7 +13,7 @@ routerBookings.get('/', async (req: Request, res: Response, next: NextFunction) 
   }
 });
 
-routerBookings.get('/id/:bookingId', async (req: Request, res: Response, next: NextFunction) => {
+routerBookings.get('/:bookingId', async (req: Request, res: Response, next: NextFunction) => {
   const { bookingId } = req.params
   try {
     const booking = await getBooking(Number(bookingId))
@@ -25,7 +25,7 @@ routerBookings.get('/id/:bookingId', async (req: Request, res: Response, next: N
   }
 });
 
-routerBookings.post('/newBooking', async (req: Request, res: Response, next: NextFunction) => {
+routerBookings.post('/', async (req: Request, res: Response, next: NextFunction) => {
   const booking = req.body
   try {
     const bookingNew = await newBooking(booking)
@@ -35,7 +35,7 @@ routerBookings.post('/newBooking', async (req: Request, res: Response, next: Nex
   }
 });
 
-routerBookings.put('/editBooking/:bookingId', async (req: Request, res: Response, next: NextFunction) => {
+routerBookings.put('/:bookingId', async (req: Request, res: Response, next: NextFunction) => {
   const booking = req.body
   try {
     const updateBooking = await editBooking(booking)
@@ -45,7 +45,7 @@ routerBookings.put('/editBooking/:bookingId', async (req: Request, res: Response
   }
 });
 
-routerBookings.delete('/id/:bookingId', async (req: Request, res: Response, next: NextFunction) => {
+routerBookings.delete('/:bookingId', async (req: Request, res: Response, next: NextFunction) => {
   const { bookingId } = req.params
   try {
     const deleteBook = await deleteBooking(Number(bookingId))

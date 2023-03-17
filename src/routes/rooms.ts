@@ -13,7 +13,7 @@ routerRooms.get('/', async (req: Request, res: Response, next: NextFunction)=>{
   }
 });
 
-routerRooms.get('/id/:roomId', async (req: Request, res: Response, next: NextFunction) => {
+routerRooms.get('/:roomId', async (req: Request, res: Response, next: NextFunction) => {
   const { roomId } = req.params
   try {
     const room = await getRoom(Number(roomId))
@@ -25,7 +25,7 @@ routerRooms.get('/id/:roomId', async (req: Request, res: Response, next: NextFun
   }
 })
 
-routerRooms.post('/newRoom', async (req: Request, res: Response, next: NextFunction) => {
+routerRooms.post('/', async (req: Request, res: Response, next: NextFunction) => {
   const room = req.body
   try {
     const roomNew = await newRoom(room)
@@ -35,7 +35,7 @@ routerRooms.post('/newRoom', async (req: Request, res: Response, next: NextFunct
   }
 });;
 
-routerRooms.put('/editRoom/:roomId', async (req: Request, res: Response, next: NextFunction) => {
+routerRooms.put('/:roomId', async (req: Request, res: Response, next: NextFunction) => {
   const room = req.body
   try {
     const updateRoom = await editRoom(room)
@@ -45,7 +45,7 @@ routerRooms.put('/editRoom/:roomId', async (req: Request, res: Response, next: N
   }
 });
 
-routerRooms.delete('/id/:roomId', async (req: Request, res: Response, next: NextFunction) => {
+routerRooms.delete('/:roomId', async (req: Request, res: Response, next: NextFunction) => {
   const { roomId } = req.params
   try {
     const deleteRo = await deleteRoom(Number(roomId))

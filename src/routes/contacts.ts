@@ -25,7 +25,7 @@ routerContacts.get('/:contactId',async (req: Request, res: Response, next: NextF
   }
 });
 
-routerContacts.post('/newContact',async (req: Request, res: Response, next: NextFunction) => {
+routerContacts.post('/',async (req: Request, res: Response, next: NextFunction) => {
 const contact = req.body
   try {
     const contactNew = await newContact(contact)
@@ -35,7 +35,7 @@ const contact = req.body
   }
 });
 
-routerContacts.put('/editContact/:contactId', async (req: Request, res: Response, next: NextFunction) =>{
+routerContacts.put('/:contactId', async (req: Request, res: Response, next: NextFunction) =>{
 const contact = req.body
   try {
     const updateContact = await editContact(contact)

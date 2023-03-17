@@ -25,7 +25,7 @@ routerUsers.get('/:userId', async (req: Request, res: Response, next: NextFuncti
   }
 });
 
-routerUsers.post('/newUser', async (req: Request, res: Response, next: NextFunction)=>{
+routerUsers.post('/', async (req: Request, res: Response, next: NextFunction)=>{
   const user = req.body
   try {
     const userNew = await newUser(user)
@@ -35,7 +35,7 @@ routerUsers.post('/newUser', async (req: Request, res: Response, next: NextFunct
   }
 });
 
-routerUsers.put('/editUser/:userId', async (req: Request, res: Response, next: NextFunction)=>{
+routerUsers.put('/:userId', async (req: Request, res: Response, next: NextFunction)=>{
   const user = req.body
   try {
     const updateUser = await editUser(user)
@@ -45,7 +45,7 @@ routerUsers.put('/editUser/:userId', async (req: Request, res: Response, next: N
   }
 });
 
-routerUsers.delete('/id/:userId', async (req: Request, res: Response, next: NextFunction)=>{
+routerUsers.delete('/:userId', async (req: Request, res: Response, next: NextFunction)=>{
   const { userId } = req.params
   try {
     const deleteUs = await deleteUser(Number(userId))
