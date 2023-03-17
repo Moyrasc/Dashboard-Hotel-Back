@@ -3,58 +3,14 @@ import { deleteBooking, editBooking, getAllBookings, getBooking, newBooking } fr
 
 const routerBookings = express.Router();
 
-routerBookings.get('/', async (req: Request, res: Response, next: NextFunction) => {
-  try {
-    const bookings = await getAllBookings()
-    if (!bookings) throw new Error("not found")
-    res.send(bookings)
-  } catch (error) {
-    next(error)
-  }
-});
+routerBookings.get('/', getAllBookings);
 
-routerBookings.get('/:bookingId', async (req: Request, res: Response, next: NextFunction) => {
-  const { bookingId } = req.params
-  try {
-    const booking = await getBooking(Number(bookingId))
-    !booking
-      ? res.status(404).send({ msg: 'booking not found' })
-      : res.send(booking)
-  } catch (error) {
-    next(error)
-  }
-});
+routerBookings.get('/:bookingId', getBooking);
 
-routerBookings.post('/', async (req: Request, res: Response, next: NextFunction) => {
-  const booking = req.body
-  try {
-    const bookingNew = await newBooking(booking)
-    res.send(bookingNew)
-  } catch (error) {
-    next(error)
-  }
-});
+routerBookings.post('/', newBooking);
 
-routerBookings.put('/:bookingId', async (req: Request, res: Response, next: NextFunction) => {
-  const booking = req.body
-  try {
-    const updateBooking = await editBooking(booking)
-    res.send(updateBooking)
-  } catch (error) {
-    next(error)
-  }
-});
+routerBookings.put('/:bookingId', editBooking);
 
-routerBookings.delete('/:bookingId', async (req: Request, res: Response, next: NextFunction) => {
-  const { bookingId } = req.params
-  try {
-    const deleteBook = await deleteBooking(Number(bookingId))
-    !deleteBook
-      ? res.status(404).send({ msg: 'booking not found' })
-      : res.send(deleteBook)
-  } catch (error) {
-    next(error)
-  }
-});
+routerBookings.delete('/:bookingId', deleteBooking);
 
 export default routerBookings

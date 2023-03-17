@@ -11,6 +11,7 @@ export interface BookingInter {
     typeRoom: string;
     description: string;
     photo: string;
-    state: string
+    state: string;
+   
 
 }
