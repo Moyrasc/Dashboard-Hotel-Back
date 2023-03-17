@@ -1,27 +1,49 @@
+import { NextFunction } from 'express';
 import bookings from '../data/bookings.json'
-import { BookingInter } from '../types/bookings/BookingInter'
 
-export const getAllBookings = async (): Promise<BookingInter[]> => {
-  return bookings
+
+export const getAllBookings = (_req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    res.send(bookings);
+  } catch (error) {
+    next(error);
+  }
+}
+export const getBooking = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    const bookingId = req.params.bookingId
+    const booking = bookings.find(booking => booking.id === Number(bookingId))
+    res.send(booking)
+  } catch (error) {
+    next(error)
+  }
 }
 
-export const getBooking =  async (id: number): Promise<BookingInter | null> =>{
-  const booking = await bookings.find(item => item.id === Number(id))
-  return booking ? booking : null
+export const editBooking = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    const bookingId = req.params.bookingId
+    const editBooking = bookings.find(booking => booking.id === Number(bookingId))
+    res.send(editBooking)
+  } catch (error) {
+    next(error)
+  }
 }
 
-export const editBooking = async (booking: BookingInter): Promise<BookingInter | undefined> =>{
-  const updatebooking = await bookings.find(item=> item.id === booking.id)
-  return updatebooking
+export const newBooking = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    return res.send({ success: true, booking: req.body });
+  } catch (error) {
+    next(error)
+  }
 }
 
-export const newBooking = async (booking: BookingInter): Promise<BookingInter> =>{
-  return booking
-}
-
-export const deleteBooking = async (id:number): Promise<BookingInter | undefined >=> {
-  const booking = await bookings.find(item => item.id === Number(id))
-  return booking
-
+export const deleteBooking = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    const bookingId = req.params.bookingId
+    const deleteBooking = bookings.find(booking => booking.id === Number(bookingId))
+    res.send(deleteBooking)
+  } catch (error) {
+    next(error)
+  }
 }
 

@@ -1,22 +1,46 @@
+import { NextFunction } from 'express';
 import rooms from '../data/rooms.json'
-import { RoomInter } from '../types/rooms/RoomInter'
 
-export const getAllRooms = async () : Promise<RoomInter[]> =>{
-  return rooms
+export const getAllRooms = (_req: any, res: any, next: NextFunction): Response | void => {
+  try {
+     res.send(rooms);
+  } catch (error) {
+    next(error);
+  }
 }
-export const getRoom = async (id: number): Promise<RoomInter | null> =>{
-  const room = await rooms.find(item => item.id === Number(id))
-  return room ? room : null
+export const getRoom = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    const roomId = req.params.roomId
+    const room = rooms.find(room => room.id === Number(roomId))
+    res.send(room)
+  } catch (error) {
+    next(error)
+  }
 }
-export const editRoom = async (room: RoomInter): Promise <RoomInter | undefined> =>{
-  const updateroom = await rooms.find(item=> item.id === room.id)
-  return updateroom
+export const editRoom = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    const roomId = req.params.roomId
+    const editRoom = rooms.find(room => room.id === Number(roomId))
+    res.send(editRoom)
+  } catch (error) {
+    next(error)
+  }
 }
-export const newRoom = async (room: RoomInter): Promise <RoomInter> => {
-  return room
+export const newRoom = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    res.send({ success: true, room: req.body });
+  } catch (error) {
+    next(error)
+  }
 }
-export const deleteRoom = async (id: number): Promise<RoomInter | undefined > => {
-  const deleteRoom = await rooms.find(item => item.id === Number(id))
-  return deleteRoom
-  
+export const deleteRoom = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    const roomId = req.params.roomId
+    const deleteRoom = rooms.find(room => room.id === Number(roomId))
+    res.send(deleteRoom)
+  } catch (error) {
+    next(error)
+  }
 }
+
+

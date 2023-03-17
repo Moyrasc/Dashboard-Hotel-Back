@@ -1,24 +1,46 @@
+import { NextFunction } from 'express';
 import users from '../data/users.json'
-import { UserInter } from "../types/users/UserInter"
 
-export const getAllUsers = async (): Promise<UserInter[]> =>{
-  return users
 
+export const getAllUsers = (_req: any, res: any, next: NextFunction): Response | void => {
+  try {
+      res.send(users);
+  } catch (error) {
+    next(error);
+  }
 }
-export const getUser = async (id: number): Promise<UserInter | null> =>{
-  const user = await users.find(item => item.id === Number(id))
-  return user ? user : null
+export const getUser = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    const {userId} = req.params
+    const user = users.find(user => user.id === Number(userId))
+    res.send(user)
+  } catch (error) {
+    next(error)
+  }
+}
 
+export const editUser = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    const {userId} = req.params
+    const editUser = users.find(user => user.id === Number(userId))
+    res.send(editUser)
+  } catch (error) {
+    next(error)
+  }
 }
-export const editUser = async (user: UserInter): Promise<UserInter | undefined> =>{
-  const updateUser = await users.find(item=> item.id === user.id)
-  return updateUser
-
+export const newUser = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    res.send({ success: true, user: req.body });
+  } catch (error) {
+    next(error)
+  }
 }
-export const newUser = async (user: UserInter): Promise<UserInter> =>{
-  return user
-}
-export const deleteUser = async (id: number): Promise <UserInter | undefined> => {
-  const deleteUs = await users.find(item => item.id === Number(id))
-  return deleteUs
+export const deleteUser = (req: any, res: any, next: NextFunction): Response | void => {
+  try {
+    const {userId} = req.params
+    const deleteUser = users.find(user => user.id === Number(userId))
+    res.send(deleteUser)
+  } catch (error) {
+    next(error)
+  }
 }
