@@ -1,27 +1,30 @@
-import { faker } from '@faker-js/faker';
+import {faker}  from '@faker-js/faker';
+// const { faker } = require('@faker-js/faker');
 import connection from './config';
+// const connection = require('./config.ts');
 
-const removeTablesDB = (): void => {
+const removeTablesDB = ()=> {
   console.log('Deleting old tables...')
   connection.query('drop table if exists contacts')
   connection.query('drop table if exists users')
   connection.query('drop table if exists bookings')
-  connection.query('drop table if exists rooms_photos')
-  connection.query('drop table if exists rooms_amenities')
+  connection.query('drop table if exists amenities_rooms')
   connection.query('drop table if exists amenities')
+  connection.query('drop table if exists rooms_photos')
+  connection.query('drop table if exists photos')
   connection.query('drop table if exists rooms')
   console.log('Tables deleted ✔')
 }
-const createTablesDB = (): void => {
+const createTablesDB = () => {
   console.log('Creating new tables ...')
   connection.query(`
   create table users(
   id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
     name VARCHAR(32) NOT NULL,
-    email VARCHAR(32) NOT NULL UNIQUE,
+    email CHAR(255) NOT NULL UNIQUE,
     password VARCHAR(20) NOT NULL,
     phone VARCHAR(32) NOT NULL,
-    job VARCHAR(32) NOT NULL,
+    job CHAR(255) NOT NULL,
     description TEXT NOT NULL,
     avatar CHAR(255) NOT NULL,
     status VARCHAR(10) NOT NULL,
@@ -62,13 +65,12 @@ const createTablesDB = (): void => {
     id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
     date VARCHAR(32) NOT NULL,
     customer VARCHAR(32) NOT NULL,
-    email VARCHAR(32) NOT NULL UNIQUE,
+    email CHAR(255) NOT NULL UNIQUE,
     phone VARCHAR(32) NOT NULL,
     subject CHAR(255) NOT NULL,
     comment TEXT NOT NULL,
-    actionPublish VARCHAR(10),
-    actionArchived VARCHAR(10)
-        )
+    status VARCHAR(10)
+      )
   `)
   connection.query(`
   create table amenities(
@@ -88,20 +90,22 @@ const createTablesDB = (): void => {
   connection.query(`
   create table photos(
     id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    photo CHAR(300) NOT NULL
+    photo TEXT NOT NULL
     )
   `)
   connection.query(`
   create table rooms_photos(
-    id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,    
+    id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    photoID INT UNSIGNED NOT NULL,    
     roomID INT UNSIGNED  NOT NULL,
-    FOREIGN KEY (roomID) references rooms(id)
+    FOREIGN KEY (roomID) references rooms(id),
+    FOREIGN KEY(photoID) references photos(id)
     )
   `)
   console.log('Tables created ✔')
 }
 
-const createUsersFake = (): void => {
+const createUsersFake = () => {
   for (let i = 0; i < 10; i++) {
     const name = faker.name.fullName()
     const email = faker.helpers.unique(faker.internet.email)
@@ -120,7 +124,7 @@ const createUsersFake = (): void => {
     `, [[name, email, password, phone, job, description,avatar,startDate, status]])
   }
 }
-const createRoomsFake = (): void => {
+const createRoomsFake = () => {
   for (let i = 0; i < 10; i++) {
     const name = faker.helpers.arrayElement(['Deluxe A-91','Deluxe B-91','Deluxe C-91'])
     const typeRoom = faker.helpers.arrayElement(['Single Bed', 'Suite', 'Double Superior', 'Double Bed '])
@@ -141,26 +145,26 @@ const createRoomsFake = (): void => {
     `, [[name,typeRoom, roomFloor, description, number, offers, price, discount, cancellation, status]])
   }
 }
-const createBookingsFake = (): void => {
+const createBookingsFake = () => {
   for (let i = 0; i < 10; i++) {
     const guest = faker.name.fullName()
     const orderDate = faker.date.recent()
     const checkin = faker.date.between(orderDate, new Date())
     const checkout = faker.date.soon(10, checkin)
-    const request = faker.lorem.lines(1)
     const roomId = Math.floor(Math.random() * 10 + 1)
     const price = faker.random.numeric(5)
     const specialRequest = faker.lorem.lines(2)
-    const status = faker.helpers.arrayElement(['checkin', 'checkout', 'inprogress'])
+    const description = faker.lorem.lines(2)
+    const state = faker.helpers.arrayElement(['checkin', 'checkout', 'inprogress'])
     connection.query(`
       insert into bookings 
-      (guest, orderDate, checkin, checkout, request, status, roomId, price, specialRequest)
+      (guest, orderDate, checkin, checkout, description, state, roomId, price, specialRequest)
       values
       (?)
-    `, [[guest, orderDate, checkin, checkout, request, status, roomId, price, specialRequest]])
+    `, [[guest, orderDate, checkin, checkout, description, state, roomId, price, specialRequest]])
   }
 }
-const createContactsFake = (): void => {
+const createContactsFake = () => {
   for (let i = 0; i < 10; i++) {
     const date = faker.date.recent()
     const customer = faker.name.fullName()
@@ -177,7 +181,7 @@ const createContactsFake = (): void => {
     `, [[date, customer, email, phone, comment, subject, status]])
   }
 }
-const createAmenitiesFake = (): void => {
+const createAmenitiesFake = () => {
   const amenities = ['Vistas al mar', 'Bañera', 'TV', 'AC', 'Mascotas','Mini-bar']
   amenities.forEach(item => {
     connection.query(`
@@ -185,28 +189,37 @@ const createAmenitiesFake = (): void => {
     `, [item])
   })
 }
-const createRoomsAmenitiesFake = (): void => {
+const createRoomsAmenitiesFake = () => {
   for (let i = 0; i < 100; i++) {
     const roomID = Math.floor(Math.random() * 10 + 1)
     const amenitieID = Math.floor(Math.random() * 4 + 1)
     connection.query(`
-      insert into rooms_amenities
+      insert into amenities_rooms
       (roomID, amenitieID)
       values
       (?)
     `, [[roomID, amenitieID]])
   }
 }
-const createRoomPhotos = (): void => {
+const createPhotosFaker = () =>{
   for (let i = 0; i < 50; i++) {
     const photo = faker.image.imageUrl()
+    connection.query(`
+    insert into photos
+    (photo) values
+      (?)`,[photo])
+}
+}
+const createRoomPhotos = () => {
+  for (let i = 0; i < 50; i++) {
+    const photoID = Math.floor(Math.random() * 10 + 1)
     const roomID = Math.floor(Math.random() * 10 + 1)
     connection.query(`
       insert into rooms_photos
-      (roomID, photo)
+      (roomID, photoID)
       values
       (?)
-    `, [[roomID, photo]])
+    `, [[roomID, photoID]])
   }
 }
 removeTablesDB()
@@ -217,5 +230,6 @@ createContactsFake()
 createBookingsFake()
 createAmenitiesFake()
 createRoomsAmenitiesFake()
+createPhotosFaker()
 createRoomPhotos()
 connection.end()

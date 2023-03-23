@@ -1,4 +1,4 @@
-import mysql from 'mysql'
+import mysql from 'mysql2'
 import 'dotenv/config'
 
 const {MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE, MYSQL_PORT}= process.env
@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
 })
 export async function dbQuery (query: string, params?: any[]): Promise<any[]> {
   return await new Promise((resolve, reject) => {
-    connection.query(query, params, (error, results) => {
+    connection.query(query, params, (error, results: any) => {
       if (error != null) { reject(error) }
       resolve(results)
     })

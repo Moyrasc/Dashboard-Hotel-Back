@@ -59,11 +59,13 @@ CREATE TABLE amenities_rooms(
 );
 CREATE TABLE photos(
     id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    photo CHAR(300) NOT NULL
+    photo TEXT NOT NULL
 );
 CREATE TABLE rooms_photos(
-    id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,    
+    id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    photoID INT UNSIGNED  NOT NULL,  
     roomID INT UNSIGNED  NOT NULL,
     FOREIGN KEY (roomID) references rooms(id)
+    FOREIGN KEY(photoID) references photos(id)
 
 );
