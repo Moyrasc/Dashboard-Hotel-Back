@@ -6,6 +6,5 @@ export interface ContactInter {
     phone: string;
     subject: string;
     comment: string;
-    actionPublish: string;
-    actionArchived: string;
+    status: string;
 }

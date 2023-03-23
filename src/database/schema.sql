@@ -21,7 +21,7 @@ CREATE TABLE rooms(
     price INT NOT NULL,
     discount INT,
     cancellation CHAR(255),
-    status VARCHAR(10) NOT NULL,
+    status VARCHAR(10) NOT NULL
 );
 CREATE TABLE bookings(
     id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -43,8 +43,7 @@ CREATE TABLE contacts(
     phone VARCHAR(32) NOT NULL,
     subject CHAR(255) NOT NULL,
     comment TEXT NOT NULL,
-    actionPublish VARCHAR(10)
-    actionArchived VARCHAR(10)
+    status VARCHAR(10) NOT NULL
 );
 CREATE TABLE amenities(
     id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -55,16 +54,16 @@ CREATE TABLE amenities_rooms(
     amenitieID INT UNSIGNED  NOT NULL,
     roomID INT UNSIGNED NOT NULL,
     FOREIGN KEY  (amenitieID) REFERENCES amenities(id),
-    FOREIGN KEY (roomID) REFERENCES rooms(id),
+    FOREIGN KEY (roomID) REFERENCES rooms(id)
 
 );
 CREATE TABLE photos(
     id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    photo CHAR(300) NOT NULL,
+    photo CHAR(300) NOT NULL
 );
 CREATE TABLE rooms_photos(
     id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,    
     roomID INT UNSIGNED  NOT NULL,
-    FOREIGN KEY (roomID) references rooms(id),
+    FOREIGN KEY (roomID) references rooms(id)
 
 );
