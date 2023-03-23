@@ -1,7 +1,6 @@
 import {faker}  from '@faker-js/faker';
-// const { faker } = require('@faker-js/faker');
 import connection from './config';
-// const connection = require('./config.ts');
+import bcrypt from "bcrypt"
 
 const removeTablesDB = ()=> {
   console.log('Deleting old tables...')
@@ -22,7 +21,7 @@ const createTablesDB = () => {
   id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
     name VARCHAR(32) NOT NULL,
     email CHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(20) NOT NULL,
+    password CHAR(255) NOT NULL,
     phone VARCHAR(32) NOT NULL,
     job CHAR(255) NOT NULL,
     description TEXT NOT NULL,
@@ -104,12 +103,21 @@ const createTablesDB = () => {
   `)
   console.log('Tables created ✔')
 }
-
-const createUsersFake = () => {
+const createUserAdmin = () =>{
+  const password = bcrypt.hashSync('1234', 10)
+  connection.query(`
+      insert into users 
+      (name, email, password, phone, job, description,avatar,startDate, status)
+      values
+      (?)
+    `, [['Noe','admin@admin.com',password,'666666666','admin','Non aspernatur vel odit tempora quas.Optio necessitatibus cumque cumque et fugiat sunt necessitatibus','ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/413.jpg','2023-03-23 05:26:06.167','active']])
+}
+const createUsersFake = async() => {
   for (let i = 0; i < 10; i++) {
     const name = faker.name.fullName()
     const email = faker.helpers.unique(faker.internet.email)
-    const password = faker.internet.password()
+    const fakerpassword = faker.internet.password()
+    const password = bcrypt.hashSync(fakerpassword, 10)
     const phone = faker.phone.number('##########')
     const job = faker.lorem.lines(1)
     const description = faker.lorem.lines(2)
@@ -224,6 +232,7 @@ const createRoomPhotos = () => {
 }
 removeTablesDB()
 createTablesDB()
+createUserAdmin()
 createUsersFake()
 createRoomsFake()
 createContactsFake()
