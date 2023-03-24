@@ -12,6 +12,5 @@ export interface BookingInter {
     description: string;
     photo: string;
     state: string;
-   
 
 }
